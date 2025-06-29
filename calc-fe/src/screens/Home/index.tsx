@@ -124,7 +124,7 @@ function Home() {
 
   const renderLatexToCanvas = (expression: string, answer: string) => {
     const escapeLatex = (str: string) =>
-      str.replace(/([#%&~_^{}])/g, "\\$1").replace(/\\/g, "\\textbackslash{}");
+      str.replace(/\\/g, "\\textbackslash{}").replace(/([#%&~_^{}])/g, "\\$1");
 
     const escapedExpr = `\\text{${escapeLatex(expression)}}`;
     const escapedAnswer =
